@@ -21,9 +21,23 @@
     margin: 0;
 }
 
+article {
+    background-color: var(--white);
+    color: var(--desaturated-dark-blue);
+}
+
+#author {
+    color: var(--very-dark-grayish-blue);
+}
+
 body {
     min-height: 100vh;
     font-family: "Manrope", sans-serif;
+    background-color: var(--light-grayish-blue);
+}
+
+h1 {
+    color: var(--very-dark-grayish-blue);
 }
   
 img {
@@ -33,4 +47,8 @@ img {
 
 p {
     text-wrap: pretty;
+}
+
+time {
+    color: var(--grayish-blue);
 }
