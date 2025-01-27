@@ -116,9 +116,14 @@ p {
     fill: var(--desaturated-dark-blue);
 }
 
-#share:hover, #share:active {
+#share:hover, #share.selected {
     background-color: var(--desaturated-dark-blue);
     fill: var(--white);
+}
+
+#share.selected:hover {
+    background-color: var(--light-grayish-blue);
+    fill: var(--desaturated-dark-blue);
 }
 
 time {
