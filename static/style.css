@@ -5,11 +5,12 @@
 
 :root {
     /* Colours */
-    --very-dark-grayish-blue: hsl(217, 19%, 35%);
-    --desaturated-dark-blue: hsl(214, 17%, 51%);
-    --grayish-blue: hsl(212, 23%, 69%);
-    --light-grayish-blue: hsl(210, 46%, 95%);
-    --white: hsl(0, 0%, 100%);
+    --very-dark-grayish-blue: hsl(217 19% 35%);
+    --desaturated-dark-blue: hsl(214 17% 51%);
+    --grayish-blue: hsl(212 23% 69%);
+    --light-grayish-blue: hsl(210 46% 95%);
+    --shadow-grayish-blue: hsl(210 29% 84% / 0.5);
+    --white: hsl(0 0% 100%);
 
     /* Font sizes */
     --fs-header: clamp(1rem, 0.7615rem + 1.0178vw, 1.25rem);
@@ -66,6 +67,7 @@ body {
     overflow: hidden;
     min-width: 300px;
     max-width: 730px;
+    box-shadow: 0 40px 40px -10px var(--shadow-grayish-blue);
 }
 
 .card::before {
