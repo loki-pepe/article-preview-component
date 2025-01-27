@@ -47,6 +47,18 @@ body {
     padding: 24px;
 }
 
+.card {
+    display: flex;
+    flex-direction: column;
+}
+
+.card::before {
+    display: block;
+    content: "";
+    flex: 0 0 200px;
+    background: url("../images/drawers.jpg") center/cover no-repeat border-box;
+}
+
 h1 {
     color: var(--very-dark-grayish-blue);
     line-height: calc(100% + 8px);
@@ -66,4 +78,15 @@ p {
 
 time {
     color: var(--grayish-blue);
+}
+
+@media (min-width: 48rem) {
+    .card {
+        flex-direction: row;
+    }
+
+    .card::before {
+        flex-basis: 285px;
+        height: auto;
+    }
 }
