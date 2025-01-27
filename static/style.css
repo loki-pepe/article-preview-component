@@ -10,6 +10,10 @@
     --grayish-blue: hsl(212, 23%, 69%);
     --light-grayish-blue: hsl(210, 46%, 95%);
     --white: hsl(0, 0%, 100%);
+
+    /* Font sizes */
+    --fs-header: clamp(1rem, 0.7615rem + 1.0178vw, 1.25rem);
+    --fs-body: 0.8125rem;
 }
 
 *, *::before, *::after {
@@ -29,18 +33,26 @@ article {
 
 #author {
     color: var(--very-dark-grayish-blue);
+    font-weight: 700;
 }
 
 body {
     min-height: 100vh;
     font-family: "Manrope", sans-serif;
     line-height: 1.5;
+    font-weight: 500;
+    font-size: var(--fs-body);
+    letter-spacing: 0.0075rem;
     background-color: var(--light-grayish-blue);
     padding: 24px;
 }
 
 h1 {
     color: var(--very-dark-grayish-blue);
+    line-height: calc(100% + 8px);
+    font-weight: 700;
+    font-size: var(--fs-header);
+    letter-spacing: clamp(0.0125rem, 0.0095rem + 0.0127vw, 0.015625rem);
 }
   
 img {
@@ -49,7 +61,6 @@ img {
 }
 
 p {
-    text-wrap: pretty;
     margin-block: 12px 32px;
 }
 
