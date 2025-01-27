@@ -34,6 +34,11 @@ article {
 #author {
     color: var(--very-dark-grayish-blue);
     font-weight: 700;
+    grid-area: author;
+}
+
+#avatar {
+    grid-area: avatar;
 }
 
 body {
@@ -59,6 +64,16 @@ body {
     background: url("../images/drawers.jpg") center 25%/cover no-repeat border-box;
 }
 
+footer {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    grid-template-areas:
+        "avatar author share"
+        "avatar date share"
+    ;
+    column-gap: 16px;
+}
+
 h1 {
     color: var(--very-dark-grayish-blue);
     line-height: calc(100% + 8px);
@@ -76,8 +91,13 @@ p {
     margin-block: 12px 32px;
 }
 
+#share {
+    grid-area: share;
+}
+
 time {
     color: var(--grayish-blue);
+    grid-area: date;
 }
 
 @media (min-width: 48rem) {
