@@ -112,6 +112,13 @@ p {
     border: none;
     border-radius: 50%;
     align-self: center;
+    background-color: var(--light-grayish-blue);
+    fill: var(--desaturated-dark-blue);
+}
+
+#share:hover, #share:active {
+    background-color: var(--desaturated-dark-blue);
+    fill: var(--white);
 }
 
 time {
