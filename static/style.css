@@ -24,6 +24,7 @@
 article {
     background-color: var(--white);
     color: var(--desaturated-dark-blue);
+    padding: 32px 32px 20px;
 }
 
 #author {
@@ -33,7 +34,9 @@ article {
 body {
     min-height: 100vh;
     font-family: "Manrope", sans-serif;
+    line-height: 1.5;
     background-color: var(--light-grayish-blue);
+    padding: 24px;
 }
 
 h1 {
@@ -47,6 +50,7 @@ img {
 
 p {
     text-wrap: pretty;
+    margin-block: 12px 32px;
 }
 
 time {
