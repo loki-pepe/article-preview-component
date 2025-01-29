@@ -82,7 +82,7 @@ footer {
     padding-block: 16px;
 }
 
-.footer-main {
+#footer-main {
     display: grid;
     grid-template-columns: auto 1fr auto;
     grid-template-areas:
@@ -93,7 +93,7 @@ footer {
     width: 100%;
 }
 
-.footer-overlay {
+#footer-overlay {
     visibility: hidden;
     display: flex;
     justify-content: start;
@@ -108,12 +108,12 @@ footer {
     transition: 0.5s ease;
 }
 
-.footer-overlay.active {
+#footer-overlay.active {
     visibility: visible;
     top: 0;
 }
 
-.footer-overlay h2 {
+#footer-overlay h2 {
     text-transform: uppercase;
     font-size: inherit;
     letter-spacing: 0.3125rem;
@@ -121,13 +121,13 @@ footer {
     line-height: 1;
 }
 
-.footer-overlay a {
+#footer-overlay a {
     display: flex;
     flex-shrink: 0;
     fill: var(--white);
 }
 
-.footer-overlay a:hover {
+#footer-overlay a:hover {
     fill: var(--grayish-blue);
 }
 
@@ -216,7 +216,7 @@ time {
         padding-block: 0;
     }
 
-    .footer-overlay {
+    #footer-overlay {
         opacity: 0;
         width: auto;
         height: 3.4375rem;
@@ -227,7 +227,7 @@ time {
         transition: opacity 0.5s;
     }
 
-    .footer-overlay::after {
+    #footer-overlay::after {
         content: "";
         position: absolute;
         top: 50%;
@@ -238,7 +238,7 @@ time {
         border-color: transparent transparent transparent var(--very-dark-grayish-blue);
     }
 
-    .footer-overlay.active {
+    #footer-overlay.active {
         right: 24%;
         top: -20%;
         opacity: 1;
@@ -254,13 +254,13 @@ time {
 }
 
 @media (min-width: 54rem) {
-    .footer-overlay.active {
+    #footer-overlay.active {
         right: -15%;
         top: -199%;
         opacity: 1;
     }
 
-        .footer-overlay::after {
+        #footer-overlay::after {
         top: 100%;
         left: 50%;
         margin-top: 0;
