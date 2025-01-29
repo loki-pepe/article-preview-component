@@ -119,6 +119,7 @@ footer {
     letter-spacing: 0.3125rem;
     font-weight: 500;
     line-height: 1;
+    user-select: none;
 }
 
 #footer-overlay a {
