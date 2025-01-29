@@ -29,7 +29,6 @@
 article {
     background-color: var(--white);
     color: var(--desaturated-dark-blue);
-    padding: 36px 32px 20px;
 }
 
 #author {
@@ -78,6 +77,12 @@ body {
 }
 
 footer {
+    position: relative;
+    margin-block-start: 16px;
+    padding-block: 16px;
+}
+
+.footer-main {
     display: grid;
     grid-template-columns: auto 1fr auto;
     grid-template-areas:
@@ -85,6 +90,45 @@ footer {
         "avatar date share"
     ;
     column-gap: 16px;
+    width: 100%;
+}
+
+.footer-overlay {
+    visibility: hidden;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    position: absolute;
+    column-gap: 16px;
+    top: 100%;
+    width: 100%;
+    height: 100%;
+    background-color: var(--very-dark-grayish-blue);
+    color: var(--grayish-blue);
+    transition: 0.5s ease;
+}
+
+.footer-overlay.active {
+    visibility: visible;
+    top: 0;
+}
+
+.footer-overlay h2 {
+    text-transform: uppercase;
+    font-size: inherit;
+    letter-spacing: 0.3125rem;
+    font-weight: 500;
+    line-height: 1;
+}
+
+.footer-overlay a {
+    display: flex;
+    flex-shrink: 0;
+    fill: var(--white);
+}
+
+.footer-overlay a:hover {
+    fill: var(--grayish-blue);
 }
 
 h1 {
@@ -93,16 +137,17 @@ h1 {
     font-weight: 700;
     font-size: var(--fs-header);
     letter-spacing: clamp(0.0125rem, 0.0095rem + 0.0127vw, 0.015625rem);
+    margin-block: 36px 12px;
+}
+
+h1, p, footer > * {
+    padding-inline: 32px;
 }
   
 img {
     display: block;
     max-width: 100%;
     height: auto;
-}
-
-p {
-    margin-block: 12px 32px;
 }
 
 #share {
@@ -114,6 +159,15 @@ p {
     align-self: center;
     background-color: var(--light-grayish-blue);
     fill: var(--desaturated-dark-blue);
+    z-index: 1;
+    position: relative;
+}
+
+#share svg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -60%);
 }
 
 #share:hover, #share.selected {
@@ -134,7 +188,9 @@ time {
 @media (min-width: 48rem) {
 
     article {
-        padding: 32px 40px;
+        border-radius: inherit;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
     }
 
     body {
@@ -143,15 +199,73 @@ time {
 
     .card {
         flex-direction: row;
+        overflow: visible;
     }
 
     .card::before {
         flex-basis: 285px;
         height: auto;
         background-position: left center;
+        border-radius: inherit;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
     }
 
-    p {
-        margin-block: 12px 20px;
+    footer {
+        margin-block: 20px 32px;
+        padding-block: 0;
+    }
+
+    .footer-overlay {
+        opacity: 0;
+        width: auto;
+        height: 3.4375rem;
+        padding-inline: 36.5px;
+        border-radius: 10px;
+        box-shadow: 0 10px 10px 0 var(--shadow-grayish-blue);
+        transition: 0s; 
+        transition: opacity 0.5s;
+    }
+
+    .footer-overlay::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 100%;
+        margin-top: -12px;
+        border-width: 12px;
+        border-style: solid;
+        border-color: transparent transparent transparent var(--very-dark-grayish-blue);
+    }
+
+    .footer-overlay.active {
+        right: 24%;
+        top: -20%;
+        opacity: 1;
+    }
+
+    h1 {
+        margin-block: 32px 12px;
+    }
+
+    h1, p, footer > * {
+        padding-inline: 40px;
+    }
+}
+
+@media (min-width: 54rem) {
+    .footer-overlay.active {
+        right: -15%;
+        top: -199%;
+        opacity: 1;
+    }
+
+        .footer-overlay::after {
+        top: 100%;
+        left: 50%;
+        margin-top: 0;
+        margin-left: -12px;
+        border-style: solid;
+        border-color: var(--very-dark-grayish-blue) transparent transparent transparent;
     }
 }
