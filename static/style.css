@@ -172,19 +172,28 @@ img {
     transform: translate(-50%, -60%);
 }
 
-#share:hover, #share.selected {
+#share.selected {
     background-color: var(--desaturated-dark-blue);
     fill: var(--white);
-}
-
-#share.selected:hover {
-    background-color: var(--light-grayish-blue);
-    fill: var(--desaturated-dark-blue);
 }
 
 time {
     color: var(--grayish-blue);
     grid-area: date;
+}
+
+@media (hover: hover) {
+    #share:hover {
+        background-color: var(--desaturated-dark-blue);
+        fill: var(--white);
+    }
+}
+
+@media (hover: hover) and (width < 48rem) {
+    #share.selected:hover {
+        background-color: var(--light-grayish-blue);
+        fill: var(--desaturated-dark-blue);
+    }
 }
 
 @media (min-width: 48rem) {
@@ -259,10 +268,6 @@ time {
         fill: var(--desaturated-dark-blue);
     }
 
-    #share.selected:hover {
-        background-color: var(--desaturated-dark-blue);
-        fill: var(--white);
-    }
 }
 
 @media (min-width: 54rem) {
