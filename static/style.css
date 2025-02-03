@@ -15,6 +15,9 @@
     /* Font sizes */
     --fs-header: clamp(1rem, 0.7615rem + 1.0178vw, 1.25rem);
     --fs-body: 0.8125rem;
+
+    /* Spacing */
+    --space: 8px;
 }
 
 *, *::before, *::after {
@@ -39,8 +42,8 @@ article {
 
 #avatar {
     grid-area: avatar;
-    height: 40px;
-    width: 40px;
+    height: calc(5 * var(--space));
+    width: calc(5 * var(--space));
     border-radius: 50%;
     align-self: center;
 }
@@ -53,7 +56,7 @@ body {
     font-size: var(--fs-body);
     letter-spacing: 0.0075rem;
     background-color: var(--light-grayish-blue);
-    padding: 24px;
+    padding: calc(3 * var(--space));
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -73,14 +76,14 @@ body {
 .card::before {
     display: block;
     content: "";
-    flex: 0 0 200px;
+    flex: 0 0 calc(25 * var(--space));
     background: url("../images/drawers.jpg") center 25%/cover no-repeat border-box;
 }
 
 footer {
     position: relative;
-    margin-block-start: 16px;
-    padding-block: 16px;
+    margin-block-start: calc(2 * var(--space));
+    padding-block: calc(2 * var(--space));
 }
 
 #footer-main {
@@ -90,7 +93,7 @@ footer {
         "avatar author share"
         "avatar date share"
     ;
-    column-gap: 16px;
+    column-gap: calc(2 * var(--space));
     width: 100%;
 }
 
@@ -100,7 +103,7 @@ footer {
     justify-content: start;
     align-items: center;
     position: absolute;
-    column-gap: 16px;
+    column-gap: calc(2 * var(--space));
     top: 100%;
     width: 100%;
     height: 100%;
@@ -139,11 +142,11 @@ h1 {
     font-weight: 700;
     font-size: var(--fs-header);
     letter-spacing: clamp(0.0125rem, 0.0095rem + 0.0127vw, 0.015625rem);
-    margin-block: 36px 12px;
+    margin-block: calc(4.5 * var(--space)) calc(1.5 * var(--space));
 }
 
 h1, p, footer > * {
-    padding-inline: 32px;
+    padding-inline: calc(4 * var(--space));
 }
   
 img {
@@ -154,8 +157,8 @@ img {
 
 #share {
     grid-area: share;
-    width: 32px;
-    height: 32px;
+    width: calc(4 * var(--space));
+    height: calc(4 * var(--space));
     border: none;
     border-radius: 50%;
     align-self: center;
@@ -212,7 +215,7 @@ time {
     }
 
     .card::before {
-        flex-basis: 285px;
+        flex-basis: calc(35.625 * var(--space));
         height: auto;
         background-position: left center;
         border-radius: inherit;
@@ -221,7 +224,7 @@ time {
     }
 
     footer {
-        margin-block: 20px 32px;
+        margin-block: calc(2.5 * var(--space)) calc(4 * var(--space));
         padding-block: 0;
     }
 
@@ -231,9 +234,9 @@ time {
         height: 3.4375rem;
         right: 24%;
         top: -20%;
-        padding-inline: 36.5px;
-        border-radius: 10px;
-        box-shadow: 0 10px 10px 0 var(--shadow-grayish-blue);
+        padding-inline: calc(4.5625 * var(--space));
+        border-radius: calc(1.25 * var(--space));
+        box-shadow: 0 calc(1.25 * var(--space)) calc(1.25 * var(--space)) 0 var(--shadow-grayish-blue);
     }
 
     #footer-overlay::after {
@@ -241,8 +244,8 @@ time {
         position: absolute;
         top: 50%;
         left: 100%;
-        margin-top: -12px;
-        border-width: 12px;
+        margin-top: calc(-1.5 * var(--space));
+        border-width: calc(1.5 * var(--space));
         border-style: solid;
         border-color: transparent transparent transparent var(--very-dark-grayish-blue);
     }
@@ -254,11 +257,11 @@ time {
     }
 
     h1 {
-        margin-block: 32px 12px;
+        margin-block: calc(4 * var(--space)) calc(1.5 * var(--space));
     }
 
     h1, p, footer > * {
-        padding-inline: 40px;
+        padding-inline: calc(5 * var(--space));
     }
 }
 
@@ -276,7 +279,7 @@ time {
         top: 100%;
         left: 50%;
         margin-top: 0;
-        margin-left: -12px;
+        margin-left: calc(-1.5 * var(--space));
         border-style: solid;
         border-color: var(--very-dark-grayish-blue) transparent transparent transparent;
     }
